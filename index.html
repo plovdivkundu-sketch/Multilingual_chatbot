@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Farm Assistant Backend</title>
+</head>
+<body>
+  <h1>Test Farm Assistant Backend</h1>
+  <input type="text" id="messageInput" placeholder="Type a message" />
+  <button id="sendBtn">Send</button>
+
+  <h2>Response:</h2>
+  <pre id="responseOutput" style="background:#eee; padding:10px; border-radius:5px;"></pre>
+
+  <script>
+    document.getElementById("sendBtn").addEventListener("click", async () => {
+      const message = document.getElementById("messageInput").value.trim();
+      if (!message) return alert("Please enter a message");
+
+      try {
+        const response = await fetch("http://localhost:5000/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: message, language: "english" }),
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        document.getElementById("responseOutput").textContent = data.response;
+      } catch (err) {
+        document.getElementById("responseOutput").textContent = "Error: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>

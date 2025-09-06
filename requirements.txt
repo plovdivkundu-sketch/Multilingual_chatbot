@@ -1,0 +1,8 @@
+ollama
+gtts
+speechrecognition
+pyaudio
+requests
+fastapi
+pydantic
+uvicorn[standard]

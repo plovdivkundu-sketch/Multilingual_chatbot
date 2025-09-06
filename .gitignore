@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Frontend folder
+frontend/
+
+# VSCode settings (optional)
+.vscode/
+
+# Python environment variables file (optional)
+.env
+
+# Other common ignores
+*.log
+*.sqlite3
