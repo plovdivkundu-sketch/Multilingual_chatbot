@@ -8,7 +8,7 @@ venv/
 env/
 .venv/
 
-# Specific folder to ignore
+# Frontend folder
 frontend/
 
 # Operating System files
