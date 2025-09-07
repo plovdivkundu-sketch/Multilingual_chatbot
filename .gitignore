@@ -5,16 +5,13 @@ __pycache__/
 
 # Virtual environment
 venv/
+env/
+.venv/
 
-# Frontend folder
+# Specific folder to ignore
 frontend/
 
-# VSCode settings (optional)
-.vscode/
+# Operating System files
+.DS_Store
+Thumbs.db
 
-# Python environment variables file (optional)
-.env
-
-# Other common ignores
-*.log
-*.sqlite3
